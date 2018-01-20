@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+    <script src="vendors/angular.min.js"></script>
+    <script src="scripts/client.js"></script>
+</head>
+<body ng-app="giphyApp">
+    <main>
+    <section ng-controller="GiphyController as vm">
+        <input ng-model="search" type="text">
+        <button ng-click="onSearch; vm.getSearchedGif(search)">Search</button>
+        <button ng-click="vm.getRandomGif()">Random</button>
+        <div>
+        <img ng-src="{{vm.random.image_url}}"/>
+        <a href="#"  ng-hide="onSearch"><img src="assets/backward.png"></a><img ng-src="{{vm.searchimage}}"/><a href="#" class="direction_links"  ng-hide="onSearch"></a>
+    </div>
+    </section>
+
+
+    </main>
+</body>
+</html>
