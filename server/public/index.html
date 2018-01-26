@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/styles.css" rel="stylesheet" text="text/css">
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-route.min.js" charset="utf-8"></script>
+
+    <!-- Angular Material -->
+
+
+
+    <!-- Client side code -->
+    <script src="scripts/client.js" charset="utf-8"></script>
+    <script src="controllers/random.controller.js" charset="utf-8"></script>
+    <script src="controllers/search.controller.js" charset="utf-8"></script>
+
+</head>
+<body>
+<nav ng-include="'/views/templates/nav.html'">
+</nav>
+
+        <main>
+            <section ng-view>
+
+            </section>
+        </main> 
+      
+</body>
+</html>
