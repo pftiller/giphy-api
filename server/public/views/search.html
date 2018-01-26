@@ -1,3 +1,5 @@
 <input ng-model="search" type="text">
 <button class="btn-default" ng-click="vm.getSearchedGif(search)">Search</button>
-<img ng-src="{{vm.searchimage}}"/>
+<ul>
+    <li ng-repeat="item in vm.search.result"><img ng-src="{{item.images.downsized.url}}"></li>
+</ul>

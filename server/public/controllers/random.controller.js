@@ -1,11 +1,11 @@
-myApp.controller('RandomController', ['$http', function ($http){
+myApp.controller('RandomController', ['GiphyService', function (GiphyService){
     console.log('loading random controller');
     const self = this;
 
+    // connection to service variable
+    self.random = GiphyService.random;
+
     self.getRandomGif = function() {
-        $http.get('https://api.giphy.com/v1/gifs/random?api_key=sjUegEu3KVUL9wwUJWWmUj8WeDQXbYIt').then(function(response){
-            console.log(response);
-             self.random = response.data.data;
-            });
-        }
+        GiphyService.getRandomGif();
+    }
 }]); 
