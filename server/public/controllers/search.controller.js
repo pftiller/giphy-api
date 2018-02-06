@@ -1,9 +1,8 @@
-myApp.controller('SearchController', ['GiphyService', function (GiphyService){
+myApp.controller('SearchController', [ function (){
     console.log('loading search controller');
     const self = this;
-   
-    self.search = GiphyService.search;
+
     self.getSearchedGif = function(searchText) {
-        GiphyService.getSearchedGif(searchText);
+       
     }  
 }]);

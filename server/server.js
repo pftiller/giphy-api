@@ -1,14 +1,25 @@
 const express = require('express');
 const app = express();
+var path = require('path');
+require('dotenv').config();
 const axios = require('axios');
-const env = require('dotenv');
+const bodyParser = require('body-parser');
+const giphyRouter = require('./routes/giphy.route')
 
-env.config();
-let port = process.env.PORT || 5000;
+
+let port = process.env.PORT;
+
+
+app.use(bodyParser.json());
 
 app.use(express.static('server/public'));
 
-app.listen(port, () => {
-    console.log(`server running on ${port}`);
 
-});
+app.use('/giphy', giphyRouter);
+
+
+app.listen(port, () => {
+    console.log('Listening on port: ', port);
+  });
+  
+
