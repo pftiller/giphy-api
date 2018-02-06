@@ -3,12 +3,12 @@ const router = express.Router();
 const axios = require('axios');
 
 const config = { 
-    params: {api_key: process.env.GIPHY_KEY}
+    params: {api_key: process.env.GIPHY_KEY,
+             search: searchText   
+            }
 }
 
 router.get('/', (req, res) => {
- 
-
     axios.get('https://api.giphy.com/v1/gifs/random', config)
         .then(response =>{
             console.log('get random gif response: ', response)
@@ -19,15 +19,6 @@ router.get('/', (req, res) => {
           })
         });
 
-    
-//  getSearchedGif = function() {
-//         console.log('searching');
-//         axios.get('https://api.giphy.com/v1/gifs/search?', config)
-//         .then(function(response) { 
-//         self.search.result = response.data.data;
-//         console.log('these are the results', self.search.result);
-//         })
-//      }
 
 
 module.exports = router;
